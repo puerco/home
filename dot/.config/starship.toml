@@ -1,0 +1,39 @@
+add_newline = false
+
+format = """\\[puerco@$hostname$directory\\] \
+$kubernetes\
+$git_branch\
+$git_status\
+$golang❯ """
+
+[directory]
+format = "[$path](bold)[$read_only]($read_only_style)"
+
+[golang]
+#format = "$symbol"
+#format = "ᕕ(ᐛ)ᕗ"
+format = "🦆"
+
+[gcloud]
+disabled = false
+
+[hostname]
+ssh_only = false
+format = "[$hostname]() "
+
+
+[git_status]
+
+format = '([\[$staged$modified$ahead_behind\]]($style) )'
+
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "🤷"
+stashed = ""
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
+
