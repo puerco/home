@@ -4,18 +4,28 @@ format = """\\[puerco@$hostname$directory\\] \
 $kubernetes\
 $git_branch\
 $git_status\
-$golang❯ """
+$golang$python❯ """
+
+[directory]
+format = "[$path](bold)[$read_only]($read_only_style)"
 
 [golang]
 #format = "$symbol"
+#format = "ᕕ(ᐛ)ᕗ"
 format = "🦆"
+
+[python]
+format = '🐍( \[$virtualenv\])'
+detect_extensions = []
 
 [gcloud]
 disabled = false
+# format = 'on [$symbol$account(@$domain)(\($project\))]($style) '
+
 
 [hostname]
 ssh_only = false
-format = "[$hostname]($style) "
+format = "[$hostname]() "
 
 
 [git_status]
