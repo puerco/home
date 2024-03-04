@@ -1,0 +1,14 @@
+[roxterm profile]
+colour_scheme=
+font=Monospace 10
+scrollbar_pos=0
+tab_pos=1
+new_tabs_adjacent=1
+wrap_switch_tab=1
+tab_close_btn=0
+show_tab_num=0
+scroll_on_keystroke=1
+background_type=1
+saturation=0.913545
+background_img=/home/urbano/Pictures/background-mystic.png
+scroll_background=0
