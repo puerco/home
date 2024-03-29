@@ -22,11 +22,17 @@ detect_extensions = []
 disabled = false
 # format = 'on [$symbol$account(@$domain)(\($project\))]($style) '
 
+[kubernetes]
+symbol='⎈ '
+disabled=false
+style='blue'
+format='[$symbol$context( \($namespace\))]($style) '
+detect_folders=['kubernetes', 'deployment']
+detect_files=['configmap.yaml', 'configmap.yml', 'Chart.yaml']
 
 [hostname]
 ssh_only = false
 format = "[$hostname]() "
-
 
 [git_status]
 
