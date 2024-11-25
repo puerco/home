@@ -1,3 +1,7 @@
+Host *
+    PubkeyAcceptedKeyTypes +ssh-rsa
+    HostKeyAlgorithms +ssh-rsa
+
 Host *.uservers.net
 #  Hostname 10.0.2.137
 #  IdentityFile  ~/Downloads/EBS-Jenkins.pem
