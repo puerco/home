@@ -11,6 +11,9 @@ theme = Floraverse
 foreground = 22ff22
 background = 2e3436
 
+# Color of the thin line between splits.
+split-divider-color = ffffff
+
 font-family = "JetBrains Mono"
 # font-family = "VT323"
 # font-family = "Press Start 2P"
@@ -40,8 +43,9 @@ shell-integration-features = cursor,sudo,title
 window-inherit-working-directory = true
 window-inherit-font-size = true
 
-# Selecting text copies it straight to the clipboard.
-copy-on-select = clipboard
+# Selecting text copies to the PRIMARY selection only (not the system
+# clipboard), which is what middle-click paste uses on Linux.
+copy-on-select = true
 
 # Let programs read/write the clipboard (e.g. tmux, vim yank).
 clipboard-read = allow
@@ -65,7 +69,6 @@ quit-after-last-window-closed = false
 # =============================================================
 
 # --- your existing binds ---
-keybind = ctrl+z=close_surface
 keybind = shift+right=next_tab
 keybind = shift+left=previous_tab
 
@@ -74,17 +77,18 @@ keybind = ctrl+shift+e=new_split:right
 keybind = ctrl+shift+o=new_split:down
 keybind = ctrl+shift+w=close_surface
 
-# move focus between splits
-keybind = ctrl+alt+left=goto_split:left
-keybind = ctrl+alt+right=goto_split:right
-keybind = ctrl+alt+up=goto_split:up
-keybind = ctrl+alt+down=goto_split:down
+# move focus between splits (vertical only)
+#
+# Ctrl+Alt+Left/Right and Ctrl+Shift+Alt+Up/Down are left to GNOME on purpose
+# (switch-to-workspace and move-to-workspace), so we only bind Shift+Up/Down
+# here. This overrides Ghostty's default shift+arrow = adjust_selection.
+keybind = shift+up=goto_split:up
+keybind = shift+down=goto_split:down
 
-# resize the focused split
-keybind = ctrl+alt+shift+left=resize_split:left,20
-keybind = ctrl+alt+shift+right=resize_split:right,20
-keybind = ctrl+alt+shift+up=resize_split:up,20
-keybind = ctrl+alt+shift+down=resize_split:down,20
+# Ctrl+Shift+Up/Down resize the focused split vertically.
+# (Ctrl+Alt+Up/Down is left to GNOME for switch-to-workspace.)
+keybind = ctrl+shift+up=resize_split:up,50
+keybind = ctrl+shift+down=resize_split:down,50
 
 # temporarily maximize / restore the focused split
 keybind = ctrl+shift+enter=toggle_split_zoom
